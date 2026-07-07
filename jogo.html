@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tamagotchi Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app-container">
+        <div id="sidebar">
+            <div class="Logo2">
+                <img src="Imagens/LogoMicroLife.png" alt="Logo MicroLife Sidebar">
+            </div>
+            <button id="btn-sobre">Sobre</button>
+
+        </div>
+        <div id="main-content">
+            <div class="conteudo-principal">
+                <div class="Logo">
+                    <img src="Imagens/MicroLife.png" alt="Logo MicroLife Principal">
+                </div>
+                <div id="action-buttons">
+                    <button onclick="personagem.trabalhar(); atualizarStatus(); verificarMorte();">Trabalhar</button>
+                    <button onclick="SairPorAi();">Sair por ai</button>
+                    <button onclick="irParaFesta();">Ir pra uma festa</button>
+                    <button onclick="personagem.dormir(); atualizarStatus();">Dormir</button>
+                    <button onclick="personagem.comer(2); atualizarStatus();">Comer</button>
+                    <button onclick="personagem.beber(); atualizarStatus();">Beber</button>
+
+                </div>
+
+                <div class="status">
+                    <h2>Status de <span id="nome"></span></h2>
+                    <div>Saúde:
+                        <div class="barra">
+                            <div id="barraSaude" class="barra-preenchida"></div>
+                        </div>
+                    </div>
+                    <div>Sono:
+                        <div class="barra">
+                            <div id="barraSono" class="barra-preenchida"></div>
+                        </div>
+                    </div>
+                    <div>Fome:
+                        <div class="barra">
+                            <div id="barraFome" class="barra-preenchida"></div>
+                        </div>
+                    </div>
+                    <div>Sede:
+                        <div class="barra">
+                            <div id="barraSede" class="barra-preenchida"></div>
+                        </div>
+                    </div>
+                    <div>Diversão:
+                        <div class="barra">
+                            <div id="barraDiversao" class="barra-preenchida"></div>
+                        </div>
+                    </div>
+                    <div>Dinheiro: R$ <span id="dinheiro"></span></div>
+                </div>
+
+                <div id="quartel-options">
+                    <p>Você viu um pessoal acampando em um quartel:</p>
+                    <button onclick="escolherParticipar()">Participar</button>
+                    <button onclick="escolherPonderar()">Ponderar sobre a sociedade capitalista que vivemos</button>
+                    <button onclick="escolherTwittar()">Tirar uma foto e comentar sobre no Twitter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="balao-sobre">
+        <span class="fechar-balao" onclick="fecharBalao()">x</span>
+        <h2>Sobre o MicroLife</h2>
+        <p>MicroLife é um jogo de simulação de vida onde você cuida e interage com seu próprio personagem humano virtual!</p>
+        <p>Cuidar da saúde, fome, sono e diversão do seu personagem é essencial para que ele cresça e seja feliz.</p>
+    </div>
+
+    <div id="game-over-screen">
+        <h1>Game Over!</h1>
+        <p id="death-message"></p>
+        <button onclick="reiniciarJogo()">Reiniciar Jogo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
